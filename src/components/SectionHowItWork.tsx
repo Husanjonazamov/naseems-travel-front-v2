@@ -1,9 +1,4 @@
 import React, { FC } from "react";
-import HIW1img from "@/images/HIW1.png";
-import HIW2img from "@/images/HIW2.png";
-import HIW3img from "@/images/HIW3.png";
-import VectorImg from "@/images/VectorHIW.svg";
-import Image, { StaticImageData } from "next/image";
 import Heading from "@/shared/Heading";
 
 export interface SectionHowItWorkProps {
@@ -12,29 +7,31 @@ export interface SectionHowItWorkProps {
     id: number;
     title: string;
     desc: string;
-    img: StaticImageData;
-    imgDark?: StaticImageData;
+    youtubeUrl: string;
   }[];
 }
 
 const DEMO_DATA: SectionHowItWorkProps["data"] = [
   {
     id: 1,
-    img: HIW1img,
-    title: "Book & relax",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
+    title: "Understand how booking works in detail with practical examples",
+    desc:
+      "Booking a trip is easier than ever. First, choose your destination and dates. Then, explore various accommodation options available. Compare prices, read reviews, and select the one that suits you best. Make sure to check the cancellation policy and additional amenities. Once selected, proceed with payment. After confirmation, you will receive a booking code and instructions via email. Always keep your booking info accessible. This system allows you to modify or cancel your trip easily, ensuring flexibility and convenience throughout your travel experience.",
+    youtubeUrl: "https://www.youtube.com/embed/W4YfDg-dKzk",
   },
   {
     id: 2,
-    img: HIW2img,
-    title: "Smart checklist",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
+    title: "Manage your travel with a smart checklist of essential things",
+    desc:
+      "A smart checklist can transform your travel experience. Begin by listing your travel documents, including passport, visa, and tickets. Next, include essentials like clothes suitable for the weather, personal care items, medications, and electronic devices. Don’t forget chargers, adapters, and your travel itinerary. Add reminders for hotel check-in times, local emergency numbers, and cultural customs. Keep a copy of your checklist digitally so you can easily access it. This helps you stay organized and avoid last-minute stress during your journey.",
+    youtubeUrl: "https://www.youtube.com/embed/ahy5o5nT4oI",
   },
   {
     id: 3,
-    img: HIW3img,
-    title: "Save more",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
+    title: "Save more by using exclusive travel discounts and deals",
+    desc:
+      "Traveling doesn’t have to be expensive. You can save significantly by using exclusive deals and discounts. Start by subscribing to newsletters of travel agencies and websites. Look out for early-bird or last-minute deals. Use loyalty programs and cashback offers. Travel off-season to enjoy lower prices and less crowded destinations. Consider alternative accommodations like hostels or vacation rentals. Compare different transport options — buses, trains, or budget airlines. Being flexible with your travel plans can also help you save more. Always plan ahead and book through trusted platforms.",
+    youtubeUrl: "https://www.youtube.com/embed/QoaDkejcHSc",
   },
 ];
 
@@ -43,50 +40,26 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
   data = DEMO_DATA,
 }) => {
   return (
-    <div
-      className={`nc-SectionHowItWork  ${className}`}
-      data-nc-id="SectionHowItWork"
-    >
-      <Heading isCenter desc="Keep calm & travel on">
-        How it work
-      </Heading>
-      <div className="mt-20 relative grid md:grid-cols-3 gap-20">
-        <Image
-          className="hidden md:block absolute inset-x-0 top-10"
-          src={VectorImg}
-          alt=""
-        />
+    <div className={`nc-SectionHowItWork ${className}`} data-nc-id="SectionHowItWork">
+      <Heading isCenter desc="Keep calm & travel on">How it works</Heading>
+      <div className="mt-20 grid md:grid-cols-3 gap-14">
         {data.map((item) => (
           <div
             key={item.id}
-            className="relative flex flex-col items-center max-w-xs mx-auto"
+            className="relative flex flex-col items-center max-w-lg mx-auto text-center"
           >
-            {item.imgDark ? (
-              <>
-                <Image
-                  className="dark:hidden block mb-8 max-w-[180px] mx-auto"
-                  src={item.img}
-                  alt=""
-                />
-                <Image
-                  alt=""
-                  className="hidden dark:block mb-8 max-w-[180px] mx-auto"
-                  src={item.imgDark}
-                />
-              </>
-            ) : (
-              <Image
-                alt=""
-                className="mb-8 max-w-[180px] mx-auto"
-                src={item.img}
-              />
-            )}
-            <div className="text-center mt-auto">
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-                {item.desc}
-              </span>
+            <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+            <div className="aspect-w-16 aspect-h-9 w-full mb-6">
+              <iframe
+                className="w-full h-full rounded-lg"
+                src={item.youtubeUrl}
+                title={`How it works video ${item.id}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
+            <p className="text-neutral-700 dark:text-neutral-300 text-sm">{item.desc}</p>
           </div>
         ))}
       </div>

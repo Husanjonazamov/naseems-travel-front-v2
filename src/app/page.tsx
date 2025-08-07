@@ -15,6 +15,8 @@ import SectionVideos from "@/components/SectionVideos";
 import SectionClientSay from "@/components/SectionClientSay";
 import SectionBlogCarousel from "@/components/SectionOurBlog";
 import { DEMO_CATS, DEMO_CATS_2 } from '@/data';
+import PopularTour from "@/components/PopularTour";
+import SeletcTours from "@/components/SelectTours";
 
 function PageHome() {
   return (
@@ -28,23 +30,16 @@ function PageHome() {
 
         {/* SECTION 1 */}
         <SectionSliderNewCategories categories={DEMO_CATS} />
+        <SeletcTours />
 
         <SectionOurBlog />
 
-        <SectionGridFeaturePlaces cardType="card2" />
+        {/* <SectionGridFeaturePlaces cardType="card2" /> */}
 
         <SectionHowItWork />
 
         <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black/20" />
-          <SectionSliderNewCategories
-            categories={DEMO_CATS_2}
-            categoryCardType="card4"
-            itemPerRow={4}
-            heading="Suggestions for discovery"
-            subHeading="Popular places to stay that Chisfis recommends for you"
-            sliderStyle="style2"
-          />
+        <PopularTour />
         </div>
 
         <SectionSubscribe2 />

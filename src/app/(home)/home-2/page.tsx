@@ -162,7 +162,7 @@ function PageHome2() {
           <SectionGridFeatureProperty />
         </div>
 
-        <SectionOurFeatures type="type2" rightImg={rightImgPng} />
+        <SectionOurFeatures />
 
         <SectionDowloadApp />
 
