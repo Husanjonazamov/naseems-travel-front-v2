@@ -21,7 +21,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, title, description }) => {
       className={clsx(
         "w-full max-w-sm rounded-xl overflow-hidden transition duration-300",
         "dark:shadow-md",
-        "h-[600px] flex flex-col" // Cardga balandlik berildi va column ichida joylashdi
+        "h-[500px] flex flex-col" // Cardga balandlik berildi va column ichida joylashdi
       )}
     >
       <div className="h-[240px] w-full">

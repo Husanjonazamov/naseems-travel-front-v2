@@ -17,7 +17,6 @@ export interface HeaderFilterProps {
 
 const HeaderFilter: FC<HeaderFilterProps> = ({
   tabActive,
-  tabs,
   subHeading = "",
   heading = "Latest Articles 🎈",
   onClickTab = () => {},
@@ -41,15 +40,6 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
           className="sm:space-x-2"
           containerClassName="relative flex w-full overflow-x-auto text-sm md:text-base hiddenScrollbar"
         >
-          {tabs.map((item, index) => (
-            <NavItem
-              key={index}
-              isActive={tabActiveState === item}
-              onClick={() => handleClickTab(item)}
-            >
-              {item}
-            </NavItem>
-          ))}
         </Nav>
         <span className="hidden sm:block flex-shrink-0">
           <ButtonSecondary href="/listing-stay" className="!leading-none">

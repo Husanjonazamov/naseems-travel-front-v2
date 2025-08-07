@@ -57,9 +57,6 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
           <span className="hidden sm:inline-block">
             <i className="las la-bed text-lg"></i>
           </span>
-          <span className="text-xs text-neutral-500 dark:text-neutral-400">
-            6 beds
-          </span>
         </div>
 
         {/* ---- */}

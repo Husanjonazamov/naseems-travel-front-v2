@@ -7,12 +7,20 @@ import { blogdata } from "@/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import { Pagination } from "swiper/modules";
 
 const SelectBlog: React.FC = () => {
   return (
-    <div className="w-full py-6 px-4">
+    <div className="w-full py-10 px-4">
+      <div className="text-left mb-10">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
+          Oxirgi blog postlar
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300 text-md mt-4 max-w-2xl">
+          Bizning eng so‘nggi yangiliklarimiz, maslahatlarimiz va maqolalarimizni shu yerdan toping.
+        </p>
+      </div>
+
       <Swiper
         slidesPerView={1}
         spaceBetween={20}
