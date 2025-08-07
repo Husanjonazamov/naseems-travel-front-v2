@@ -1,50 +1,14 @@
 import React from "react";
-import logoImg from "@/images/logo.png";
-import logoLightImg from "@/images/logo-light.png";
-import LogoSvgLight from "./LogoSvgLight";
-import LogoSvg from "./LogoSvg";
-import Link from "next/link";
-import { StaticImageData } from "next/image";
 
-export interface LogoProps {
-  img?: StaticImageData;
-  imgLight?: StaticImageData;
-  className?: string;
-}
-
-const Logo: React.FC<LogoProps> = ({
-  img = logoImg,
-  imgLight = logoLightImg,
-  className = "w-24",
-}) => {
+const LogoSvg = () => {
   return (
-    <Link
-      href="/"
-      className={`ttnc-logo inline-block text-primary-6000 focus:outline-none focus:ring-0 ${className}`}
-    >
-      <LogoSvgLight />
-      <LogoSvg />
-
-      {/* THIS USE FOR MY CLIENT */}
-      {/* PLEASE UN COMMENT BELLOW CODE AND USE IT */}
-      {/* {img ? (
-        <img
-          className={`block max-h-12 ${imgLight ? "dark:hidden" : ""}`}
-          src={img}
-          alt="Logo"
-        />
-      ) : (
-        "Logo Here"
-      )}
-      {imgLight && (
-        <img
-          className="hidden max-h-12 dark:block"
-          src={imgLight}
-          alt="Logo-Light"
-        />
-      )} */}
-    </Link>
+    <div className="flex items-center space-x-2 select-none">
+      <div className="w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse" />
+      <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-zinc-100">
+        Naseems <span className="text-indigo-600 dark:text-purple-400">Travel</span>
+      </h1>
+    </div>
   );
 };
 
-export default Logo;
+export default LogoSvg;
