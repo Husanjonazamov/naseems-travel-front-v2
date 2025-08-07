@@ -37,10 +37,10 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
               } `}
               key={tab}
             >
-              {active && (
+              {/* {active && (
                 <span className="block w-2.5 h-2.5 rounded-full bg-neutral-800 dark:bg-neutral-100 mr-2" />
-              )}
-              <span>{tab}</span>
+              )} */}
+              {/* <span>{tab}</span> */}
             </li>
           );
         })}

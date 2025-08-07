@@ -1,7 +1,7 @@
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
 import React from "react";
 import SectionSubscribe2 from "@/components/SectionSubscribe2";
-import SectionOurFeatures from "@/components/SectionOurFeatures";
+import SectionOurFeatures from "@/components/SectionOurBlog";
 import SectionHowItWork from "@/components/SectionHowItWork";
 import BackgroundSection from "@/components/BackgroundSection";
 import { TaxonomyType } from "@/data/types";
