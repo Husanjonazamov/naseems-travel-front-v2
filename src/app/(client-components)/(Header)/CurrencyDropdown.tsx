@@ -14,6 +14,12 @@ import { Fragment } from "react";
 
 export const headerCurrency = [
   {
+    id: 1,
+    name: "UZS",
+    href: "##",
+    icon: CurrencyPoundIcon,
+  },
+  {
     id: "EUR",
     name: "EUR",
     href: "##",
@@ -26,24 +32,8 @@ export const headerCurrency = [
     href: "##",
     icon: CurrencyDollarIcon,
   },
-  {
-    id: "GBF",
-    name: "GBF",
-    href: "##",
-    icon: CurrencyBangladeshiIcon,
-  },
-  {
-    id: "SAR",
-    name: "SAR",
-    href: "##",
-    icon: CurrencyPoundIcon,
-  },
-  {
-    id: "QAR",
-    name: "QAR",
-    href: "##",
-    icon: CurrencyRupeeIcon,
-  },
+
+ 
 ];
 
 export default function CurrencyDropdown() {

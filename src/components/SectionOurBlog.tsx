@@ -25,21 +25,32 @@ const SelectBlog: React.FC = () => {
         slidesPerView={1}
         spaceBetween={20}
         pagination={{ clickable: true }}
+        loop={true}
+        grabCursor={true}
+        autoHeight={true}
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        {blogdata.map((blog, index) => (
+        {blogdata?.map((blog, index) => (
           <SwiperSlide key={index}>
-            <BlogCard
-              image={blog.image}
-              title={blog.title}
-              description={blog.desc}
-            />
+            <div className="h-full">
+              <BlogCard
+                image={blog.image}
+                title={blog.title}
+                description={blog.desc}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

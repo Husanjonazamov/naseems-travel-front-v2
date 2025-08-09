@@ -39,7 +39,7 @@ function classNames(...classes: any) {
 
 const LangDropdown: FC<LangDropdownProps> = ({
   panelClassName = "top-full right-0 max-w-sm w-96",
-  className = "hidden md:flex",
+  className = "flex",
 }) => {
   const renderLang = (close: () => void) => {
     return (

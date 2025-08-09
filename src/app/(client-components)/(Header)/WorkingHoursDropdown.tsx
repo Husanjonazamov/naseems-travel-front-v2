@@ -19,7 +19,7 @@ export default function WorkingHoursDropdown() {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button as="div" className="cursor-pointer">
-          <span className="inline-flex items-center text-sm font-medium text-white">
+          <span className="inline-flex items-center text-sm font-medium text-zinc-700">
             Ish vaqti
             <ChevronDownIcon className="ml-1 h-4 w-4" aria-hidden="true" />
           </span>

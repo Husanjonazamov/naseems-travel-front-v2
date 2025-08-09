@@ -1,10 +1,12 @@
 "use client";
 
 import {
+  HomeIcon,
   HeartIcon,
   MagnifyingGlassIcon,
-  UserCircleIcon,
+  Bars3Icon,
 } from "@heroicons/react/24/outline";
+
 import React, { useEffect, useRef } from "react";
 import { PathName } from "@/routers/types";
 import MenuBar from "@/shared/MenuBar";
@@ -25,19 +27,14 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   {
-    name: "Explore",
+    name: "Home",
     link: "/",
-    icon: MagnifyingGlassIcon,
+    icon: HomeIcon,
   },
   {
-    name: "Wishlists",
-    link: "/account-savelists",
+    name: "Blog",
+    link: "/blog",
     icon: HeartIcon,
-  },
-  {
-    name: "Log in",
-    link: "/account",
-    icon: UserCircleIcon,
   },
   {
     name: "Menu",
@@ -105,10 +102,10 @@ const FooterNav = () => {
           isActive ? "text-neutral-900 dark:text-neutral-100" : ""
         }`}
       >
-        <item.icon className={`w-6 h-6 ${isActive ? "text-red-600" : ""}`} />
+        <item.icon className={`w-6 h-6 ${isActive ? "text-purple-500" : ""}`} />
         <span
           className={`text-[11px] leading-none mt-1 ${
-            isActive ? "text-red-600" : ""
+            isActive ? "text-purple-600" : ""
           }`}
         >
           {item.name}

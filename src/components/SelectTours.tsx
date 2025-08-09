@@ -1,70 +1,128 @@
-"use client";
+'use client';
 
-import React from "react";
-import SelectToursCard from "./SelectToursCard";
+import React from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
+import SectionHeading from './SectionHeading';
+import SelectTouringCard from './SelectToursCard';
+import { soloTouringData } from '@/data';
 
+import { motion, Variants } from 'framer-motion';
 
-export const selectTour = [
-  {
-    id: "1",
-    title: "Nature House",
-    desc: "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
-    price: "289",
-    image:
-      "https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1324 },
+    items: 3,
+    slidesToSlide: 1,
   },
-   {
-    id: "1",
-    title: "Nature House",
-    desc: "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
-    price: "289",
-    image:
-      "https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  tablet: {
+    breakpoint: { max: 1324, min: 768 },
+    items: 2,
+    slidesToSlide: 1,
   },
-   {
-    id: "1",
-    title: "Nature House",
-    desc: "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
-    price: "289",
-    image:
-      "https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  mobile: {
+    breakpoint: { max: 768, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
   },
- 
-  {
-    id: "7",
-    desc: "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
+};
 
-    title: "Wooden house",
-    price: "389",
-
-    image:
-      "https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+const containerVariant: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
-  {
-    id: "8",
-    price: "269",
+};
 
-    title: "Wooden Dome",
-    desc: "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
-
-    image:
-      "https://images.pexels.com/photos/9039238/pexels-photo-9039238.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+const itemVariant: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
   },
-];
+};
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};
 
-const SeletcTours: React.FC = () => (
-  <section className="py-12 px-4 sm:px-8 lg:px-16 ">
-    <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10">
-      Most Popular Solo Travel Destinations
-    </h1>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {selectTour.map((tour, idx) => (
-        <SelectToursCard key={idx} {...tour} />
-      ))}
+const SelectTouring = () => {
+  return (
+    <div className="pt-20 pb-20 text-white">
+      {/* Section Heading with motion */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <SectionHeading heading="NEW SOLO TOURING HOLIDAYS" />
+      </motion.div>
+
+      {/* Desktop Grid */}
+      <motion.div
+        className="hidden md:grid mt-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] mx-auto"
+        variants={containerVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {soloTouringData.map((data, index) => (
+          <motion.div key={index} variants={itemVariant} className="h-full">
+            <SelectTouringCard data={data} />
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Mobile Carousel */}
+      <motion.div
+        className="md:hidden mt-10 px-4"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Carousel
+          responsive={responsive}
+          infinite
+          autoPlay={false}
+          showDots={true}
+          renderDotsOutside={true}
+        >
+          {soloTouringData.map((data, index) => (
+            <div key={index} className="px-2 h-full">
+              <SelectTouringCard data={data} />
+            </div>
+          ))}
+        </Carousel>
+      </motion.div>
+
+      {/* Explore More Button */}
+      <motion.div
+        className="mt-10 flex justify-center items-center"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <button className="bg-blue-900 text-white w-[86%] sm:w-[300px] text-lg sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-bold rounded-xl hover:shadow-lg transition-all hover:bg-blue-950">
+          Explore More
+        </button>
+      </motion.div>
     </div>
-  </section>
-);
+  );
+};
 
-export default SeletcTours;
+export default SelectTouring;

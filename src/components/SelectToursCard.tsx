@@ -1,46 +1,68 @@
-"use client";
+import React from 'react';
+import Image from 'next/image';
 
-import React from "react";
+type Props = {
+  data: {
+    title: string;
+    description: string;
+    points: string[];
+    days: number;
+    price: string;
+    image: string;
+  };
+};
 
-interface PopularTourCardProps {
-  image: string;
-  title: string;
-  desc: string;
-  price: string;
-  buttonText?: string;
-}
+// ✂️ 50 ta so‘zdan oshsa, qisqartir
+const truncateText = (text: string, maxWords: number) => {
+  const words = text.split(" ");
+  if (words.length <= maxWords) return text;
+  return words.slice(0, maxWords).join(" ") + "...";
+};
 
-const SelectToursCard: React.FC<PopularTourCardProps> = ({
-  image,
-  title,
-  desc,
-  price,
-  buttonText = "Explore More",
-}) => {
+const SelectTouringCard = ({ data }: Props) => {
   return (
-    <div className="bg-white dark:bg-gray-900 shadow-lg rounded-xl overflow-hidden transition duration-300 hover:shadow-2xl">
-      <div className="w-full h-48 overflow-hidden">
-        <img src={image} alt={title} className="object-cover w-full h-full" />
+    <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden flex flex-col h-full min-h-[520px]">
+      
+      {/* Image */}
+      <div className="relative h-48 w-full">
+        <Image
+          src={data.image}
+          alt={data.title}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-t-lg"
+        />
       </div>
-      <div className="p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
-          {title}
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
-          {desc}
-        </p>
-        <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          ${price}
-        </p>
-        <div className="flex justify-end">
-            <button className="text-current font-bold px-4 py-2 hover:text-blue-900 dark:hover:text-white ">
-                {buttonText}
-            </button>
-        </div>
 
+      {/* Content */}
+      <div className="p-5 flex flex-col flex-grow">
+        <h3 className="text-xl font-semibold text-sky-800 mb-3">{data.title}</h3>
+        
+        <p className="text-gray-800 text-[15px] mb-3 leading-relaxed">
+          {truncateText(data.description, 50)}
+        </p>
+
+        <ul className="list-disc list-inside text-gray-700 mb-5 text-[15px] space-y-1">
+          {data.points.map((point, idx) => (
+            <li key={idx}>{point}</li>
+          ))}
+        </ul>
+
+        {/* Footer */}
+        <div className="mt-auto">
+          <p className="text-sm font-medium text-blue-900 mb-1">
+            {data.days} days from
+          </p>
+          <p className="text-2xl font-bold text-gray-900 mb-3">£{data.price}</p>
+          <div className="flex justify-end">
+            <button className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[50%] font-bold">
+              Explore
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SelectToursCard;
+export default SelectTouringCard;

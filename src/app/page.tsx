@@ -2,6 +2,7 @@ import React from "react";
 import SectionHero from "@/app/(server-components)/SectionHero";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 import { TaxonomyType } from "@/data/types";
+import TestimonialCarousel from "@/components/TestimailCarusel";
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
 import SectionOurBlog from "@/components/SectionOurBlog";
 import BackgroundSection from "@/components/BackgroundSection";
@@ -16,7 +17,10 @@ import SectionClientSay from "@/components/SectionClientSay";
 import SectionBlogCarousel from "@/components/SectionOurBlog";
 import { DEMO_CATS, DEMO_CATS_2 } from '@/data';
 import PopularTour from "@/components/PopularTour";
-import SeletcTours from "@/components/SelectTours";
+import SoloTouring from "@/components/SoloTour";
+import SelectTouring from "@/components/SelectTours";
+
+
 
 function PageHome() {
   return (
@@ -30,7 +34,7 @@ function PageHome() {
 
         {/* SECTION 1 */}
         <SectionSliderNewCategories categories={DEMO_CATS} />
-        <SeletcTours />
+        <SelectTouring />
 
         <SectionOurBlog />
 
@@ -42,33 +46,29 @@ function PageHome() {
         <PopularTour />
         </div>
 
-        <SectionSubscribe2 />
+        {/* <SectionSubscribe2 /> */}
 
-        <div className="relative py-16">
+        {/* <div className="relative py-16">
           <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
           <SectionGridAuthorBox />
-        </div>
+        </div> */}
+        <TestimonialCarousel />
 
-        <SectionGridCategoryBox />
+        <SoloTouring />
+        {/* <SectionGridCategoryBox /> */}
 
-        <div className="relative py-16">
+        {/* <div className="relative py-16">
           <BackgroundSection />
           <SectionBecomeAnAuthor />
-        </div>
+        </div> */}
 
-        <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
-          categoryCardType="card5"
-          itemPerRow={5}
-        />
 
-        <SectionVideos />
+        {/* <SectionVideos /> */}
 
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionClientSay />
-        </div>
+        {/* <div className="relative py-16"> */}
+          {/* <BackgroundSection /> */}
+          {/* <SectionClientSay /> */}
+        {/* </div> */}
       </div>
     </main>
   );
