@@ -27,13 +27,13 @@ const BlogPage: React.FC = () => {
         </div>
 
         {/* === SECTION 1 === */}
-        <SectionAds />
+        {/* <SectionAds /> */}
 
         {/* === SECTION 8 === */}
         <SectionLatestPosts className="py-16 lg:py-28" />
 
         {/* === SECTION 1 === */}
-        <SectionSubscribe2 className="pb-16 lg:pb-28" />
+        {/* <SectionSubscribe2 className="pb-16 lg:pb-28" /> */}
       </div>
     </div>
   );
