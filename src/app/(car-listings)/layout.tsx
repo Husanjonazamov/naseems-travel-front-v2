@@ -7,6 +7,8 @@ import SectionSliderNewCategories from "@/components/SectionSliderNewCategories"
 import SectionSubscribe2 from "@/components/SectionSubscribe2";
 import SectionGridAuthorBox from "@/components/SectionGridAuthorBox";
 
+
+
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className={`nc-ListingCarMapPage relative `}>

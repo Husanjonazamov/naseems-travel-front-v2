@@ -14,7 +14,7 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
   const { title, href, desc, featuredImage, date, postType } = post;
 
   return (
-    <div className={`nc-Card13 relative flex ${className}`} data-nc-id="Card13">
+    <div className='nc-Card13 relative flex w-[100%] ' data-nc-id="Card13">
       <div className="flex flex-col h-full py-2">
         <h2 className={`nc-card-title block font-semibold text-base`}>
           <Link href={href} className="line-clamp-2" title={title}>
@@ -27,9 +27,6 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
         <span className="mt-4 block sm:hidden text-sm text-neutral-500 ">
           {date}
         </span>
-        <div className="mt-auto hidden sm:block">
-          <PostCardMeta meta={{ ...post }} />
-        </div>
       </div>
 
       <Link

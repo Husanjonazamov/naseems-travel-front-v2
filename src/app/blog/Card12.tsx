@@ -53,7 +53,7 @@ const Card12: FC<Card12Props> = ({
         <span className="hidden sm:block mt-4 text-neutral-500 dark:text-neutral-400">
           <span className="line-clamp-2"> {desc}</span>
         </span>
-        <PostCardMeta className="mt-5" meta={post} />
+        {/* <PostCardMeta className="mt-5" meta={post} /> */}
       </div>
     </div>
   );

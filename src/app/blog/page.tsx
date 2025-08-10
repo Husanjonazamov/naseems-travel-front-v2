@@ -5,6 +5,7 @@ import SectionMagazine5 from "./SectionMagazine5";
 import SectionLatestPosts from "./SectionLatestPosts";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 import SectionSubscribe2 from "@/components/SectionSubscribe2";
+import BlogMainPage from "./blog";
 
 // DEMO DATA
 const POSTS = DEMO_POSTS;
@@ -28,9 +29,10 @@ const BlogPage: React.FC = () => {
 
         {/* === SECTION 1 === */}
         {/* <SectionAds /> */}
+        <BlogMainPage />
 
         {/* === SECTION 8 === */}
-        <SectionLatestPosts className="py-16 lg:py-28" />
+        {/* <SectionLatestPosts className="py-16 lg:py-28" /> */}
 
         {/* === SECTION 1 === */}
         {/* <SectionSubscribe2 className="pb-16 lg:pb-28" /> */}
