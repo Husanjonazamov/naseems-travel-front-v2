@@ -20,27 +20,7 @@ const MobileFooterSticky = () => {
               /night
             </span>
           </span>
-          <ModalSelectDate
-            renderChildren={({ openModal }) => (
-              <span
-                onClick={openModal}
-                className="block text-sm underline font-medium"
-              >
-                {converSelectedDateToString([startDate, endDate])}
-              </span>
-            )}
-          />
         </div>
-        <ModalReserveMobile
-          renderChildren={({ openModal }) => (
-            <ButtonPrimary
-              sizeClass="px-5 sm:px-7 py-3 !rounded-2xl"
-              onClick={openModal}
-            >
-              Reserve
-            </ButtonPrimary>
-          )}
-        />
       </div>
     </div>
   );

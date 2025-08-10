@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
   data: {
@@ -55,9 +56,11 @@ const TouringCard = ({ data }: Props) => {
           </p>
           <p className="text-2xl font-bold text-gray-900 mb-3">£{data.price}</p>
           <div className="flex justify-end">
-            <button className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[50%] font-bold">
-              Explore
-            </button>
+            <Link
+              href={"/listing-stay-detail"}
+              className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[50%] font-bold">
+                Explore
+            </Link>
           </div>
         </div>
       </div>
