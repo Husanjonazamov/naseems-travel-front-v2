@@ -4,12 +4,11 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import SectionHeading from './SectionHeading';
-import SelectTouringCard from './SelectToursCard';
-import { soloTouringData } from '@/data';
+import SectionHeading from '@/components/SectionHeading';
+import TouringCard from './TourCard';
+import { TouringData } from '@/data';
 
 import { motion, Variants } from 'framer-motion';
-import Link from 'next/link';
 
 const responsive = {
   desktop: {
@@ -59,7 +58,7 @@ const fadeUp: Variants = {
   },
 };
 
-const SelectTouring = () => {
+const Touring = () => {
   return (
     <div className="pt-20 pb-20 text-white">
       {/* Section Heading with motion */}
@@ -69,7 +68,7 @@ const SelectTouring = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <SectionHeading heading="NEW SOLO TOURING HOLIDAYS" />
+        <SectionHeading heading="All Touring" />
       </motion.div>
 
       {/* Desktop Grid */}
@@ -80,9 +79,9 @@ const SelectTouring = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {soloTouringData.map((data, index) => (
+        {TouringData.map((data, index) => (
           <motion.div key={index} variants={itemVariant} className="h-full">
-            <SelectTouringCard data={data} />
+            <TouringCard data={data} />
           </motion.div>
         ))}
       </motion.div>
@@ -101,10 +100,11 @@ const SelectTouring = () => {
           autoPlay={false}
           showDots={true}
           renderDotsOutside={true}
+          customDot={null}
         >
-          {soloTouringData.map((data, index) => (
+          {TouringData.map((data, index) => (
             <div key={index} className="px-2 h-full">
-              <SelectTouringCard data={data} />
+              <TouringCard data={data} />
             </div>
           ))}
         </Carousel>
@@ -118,15 +118,9 @@ const SelectTouring = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-      <Link
-            href="/tour"
-            className="bg-blue-900 text-white w-[86%] sm:w-[300px] text-lg sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-bold rounded-xl hover:shadow-lg transition-all hover:bg-blue-950 text-center block"
-          >
-          Explore More
-        </Link>
       </motion.div>
     </div>
   );
 };
 
-export default SelectTouring;
+export default Touring;

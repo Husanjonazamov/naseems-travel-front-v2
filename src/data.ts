@@ -553,3 +553,184 @@ export const testimonials = [
     author: "Maria",
   }
 ];
+
+
+
+
+
+export const TouringData = [
+  {
+    id: 1,
+    title: "Balkan Explorer",
+    description:
+      "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
+    points: [
+      "Return flights from London",
+      "12 nights in 4-star hotels",
+      "20 meals: 12 breakfasts, 2 Lunches and 6 dinners, with a welcome drink",
+      "Just You Holiday Director",
+      "Overseas transfers, other transportation and porterage",
+    ],
+    days: 13,
+    price: "2,999",
+    image: "/images/d4.jpg",
+  },
+  {
+    id: 2,
+    title: "Switzerland's Scenic Railways and Alpine Winter Wonders",
+    description:
+      "Embark on an unforgettable Swiss winter adventure, combining elegant rail journeys with breathtaking Alpine scenery.",
+    points: [
+      "Return flights from the UK",
+      "6 nights in a 4-star hotel",
+      "9 included meals: 6 breakfasts, 1 lunch and 2 dinners",
+    ],
+    days: 7,
+    price: "3,099",
+    image: "/images/d3.jpg",
+  },
+  {
+    id: 3,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/h2.jpg",
+  },
+   {
+    id: 4,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/h1.jpg",
+  },
+   {
+    id: 5,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/d8.jpg",
+  },
+   {
+    id: 6,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/h3.jpg",
+  },
+    {
+    id: 1,
+    title: "Balkan Explorer",
+    description:
+      "An in-depth exploration of four countries in an undiscovered corner of Europe. Visit cosmopolitan cities and travel through stunning natural landscapes. You will spend time in some of the most famous cities in Eastern Europe, all of them having lots of historical sites, vibrant bars and restaurants for you to explore.",
+    points: [
+      "Return flights from London",
+      "12 nights in 4-star hotels",
+      "20 meals: 12 breakfasts, 2 Lunches and 6 dinners, with a welcome drink",
+      "Just You Holiday Director",
+      "Overseas transfers, other transportation and porterage",
+    ],
+    days: 13,
+    price: "2,999",
+    image: "/images/d4.jpg",
+  },
+  {
+    id: 2,
+    title: "Switzerland's Scenic Railways and Alpine Winter Wonders",
+    description:
+      "Embark on an unforgettable Swiss winter adventure, combining elegant rail journeys with breathtaking Alpine scenery.",
+    points: [
+      "Return flights from the UK",
+      "6 nights in a 4-star hotel",
+      "9 included meals: 6 breakfasts, 1 lunch and 2 dinners",
+    ],
+    days: 7,
+    price: "3,099",
+    image: "/images/d3.jpg",
+  },
+  {
+    id: 3,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/h2.jpg",
+  },
+   {
+    id: 4,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/h1.jpg",
+  },
+   {
+    id: 5,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/d8.jpg",
+  },
+   {
+    id: 6,
+    title: "Turkish Treasures: From Istanbul's Palaces to Cappadocia's Wonders",
+    description:
+      "Turkey dazzles your senses, from Istanbul's bustling Grand Bazaar with scents of spices to the incredible cave dwellings of Cappadocia and the shimmering tiles of the Blue Mosque — not to mention the delicious cuisine.",
+    points: [
+      "Return flights",
+      "6 nights in 4-star hotels and 12 meals",
+      "12 meals: 6 breakfasts and 6 dinners",
+    ],
+    days: 7,
+    price: "1,899",
+    image: "/images/h3.jpg",
+  },
+  
+];
+

@@ -10,6 +10,8 @@ import { soloTouringData } from '@/data';
 
 import { motion, Variants } from 'framer-motion';
 
+import Link from 'next/link';
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1324 },
@@ -118,9 +120,12 @@ const SoloTouring = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <button className="bg-blue-900 text-white w-[86%] sm:w-[300px] text-lg sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-bold rounded-xl hover:shadow-lg transition-all hover:bg-blue-950">
-          Explore More
-        </button>
+         <Link
+                href="/tour"
+                className="bg-blue-900 text-white w-[86%] sm:w-[300px] text-lg sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-bold rounded-xl hover:shadow-lg transition-all hover:bg-blue-950 text-center block"
+              >
+              Explore More
+            </Link>
       </motion.div>
     </div>
   );

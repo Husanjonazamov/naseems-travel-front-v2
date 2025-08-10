@@ -172,11 +172,10 @@ export const NAVIGATION_DEMO: NavItemType[] = [
   },
   {
     id: ncNanoId(),
-    href: "/",
-    name: "Five columns",
-    type: "megaMenu",
-    megaMenu: megaMenuDemo,
+    href: "/tour",
+    name: "Tour",
   },
+  
   // {
   //   id: ncNanoId(),
   //   href: "/listing-stay",
@@ -276,6 +275,11 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     id: ncNanoId(),
     href: "/blog",
     name: "Blog",
+  },
+  {
+    id: ncNanoId(),
+    href: "/contact",
+    name: "Contact",
   },
 ];
 

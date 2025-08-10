@@ -15,11 +15,11 @@ const info = [
   },
   {
     title: "💌 EMAIL",
-    desc: "nc.example@example.com",
+    desc: "info@naseemstravel.uz",
   },
   {
     title: "☎ PHONE",
-    desc: "000-123-456-7890",
+    desc: "+998-94-001-47-41",
   },
 ];
 
@@ -62,11 +62,11 @@ const PageContact: FC<PageContactProps> = ({}) => {
                   />
                 </label>
                 <label className="block">
-                  <Label>Email address</Label>
+                  <Label>Phone</Label>
 
                   <Input
-                    type="email"
-                    placeholder="example@example.com"
+                    type="text"
+                    placeholder="+998-94-001-47-71"
                     className="mt-1"
                   />
                 </label>
@@ -84,10 +84,6 @@ const PageContact: FC<PageContactProps> = ({}) => {
         </div>
       </div>
 
-      {/* OTHER SECTIONS */}
-      <div className="container">
-        <SectionSubscribe2 className="pb-24 lg:pb-32" />
-      </div>
     </div>
   );
 };
