@@ -8,25 +8,25 @@ import "rc-slider/assets/index.css";
 import Footer from "@/components/Footer";
 import FooterNav from "@/components/FooterNav";
 
+// Google Fonts: Poppins
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins", // Tailwind bilan ishlatish uchun
 });
 
 export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: any;
 }) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
+    <html lang="en" className={poppins.variable}>
+      <body className="font-sans bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
         <ClientCommons />
         <SiteHeader />
-        {children}
+        <main>{children}</main>
         <FooterNav />
         <Footer />
       </body>
