@@ -8,9 +8,11 @@ import Badge from "@/shared/Badge";
 import Link from "next/link";
 import GallerySlider from "./GallerySlider";
 
+
+
 export interface StayCardProps {
   className?: string;
-  data?: StayDataType;
+  data: StayDataType;
   size?: "default" | "small";
 }
 

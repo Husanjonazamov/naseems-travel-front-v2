@@ -9,7 +9,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export interface HeaderFilterProps {
   tabActive: string;
-  tabs: string[];
+  // tabs: string[];
   heading: ReactNode;
   subHeading?: ReactNode;
   onClickTab?: (item: string) => void;

@@ -8,16 +8,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { useTranslations } from "use-intl";
 
 const SelectBlog: React.FC = () => {
+  const t = useTranslations("travel");
   return (
     <div className="w-full py-10 px-4">
       <div className="text-left mb-10">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
-          Oxirgi blog postlar
+          {t("latest_blog_posts")}
         </h2>
         <p className="text-gray-600 dark:text-gray-300 text-md mt-4 max-w-2xl">
-          Bizning eng so‘nggi yangiliklarimiz, maslahatlarimiz va maqolalarimizni shu yerdan toping.
+          {t("latest_news_desc")}
         </p>
       </div>
 

@@ -3,8 +3,6 @@
 import {
   HomeIcon,
   HeartIcon,
-  MagnifyingGlassIcon,
-  Bars3Icon,
 } from "@heroicons/react/24/outline";
 
 import React, { useEffect, useRef } from "react";
@@ -12,6 +10,7 @@ import { PathName } from "@/routers/types";
 import MenuBar from "@/shared/MenuBar";
 import isInViewport from "@/utils/isInViewport";
 import Link from "next/link";
+import { useTranslations } from "use-intl";
 import { usePathname } from "next/navigation";
 
 let WIN_PREV_POSITION = 0;
@@ -20,38 +19,40 @@ if (typeof window !== "undefined") {
 }
 
 interface NavItem {
-  name: string;
+  nameKey: string; // endi key sifatida ishlatamiz
   link?: PathName;
   icon: any;
 }
 
-const NAV: NavItem[] = [
-  {
-    name: "Home",
-    link: "/",
-    icon: HomeIcon,
-  },
-  {
-    name: "Blog",
-    link: "/blog",
-    icon: HeartIcon,
-  },
-  {
-    name: "Menu",
-    icon: MenuBar,
-  },
-];
-
 const FooterNav = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const t = useTranslations("travel"); // travel.json dan oladi
   const pathname = usePathname();
+
+  const NAV: NavItem[] = [
+    {
+      nameKey: "home",
+      link: "/",
+      icon: HomeIcon,
+    },
+    {
+      nameKey: "blog",
+      link: "/blog",
+      icon: HeartIcon,
+    },
+    {
+      nameKey: "menu",
+      icon: MenuBar,
+    },
+  ];
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleEvent);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {
+      window.removeEventListener("scroll", handleEvent);
+    };
   }, []);
 
   const handleEvent = () => {
@@ -61,14 +62,9 @@ const FooterNav = () => {
   };
 
   const showHideHeaderMenu = () => {
-    // if (typeof window === "undefined" || window?.innerWidth >= 768) {
-    //   return null;
-    // }
-
     let currentScrollPos = window.pageYOffset;
     if (!containerRef.current) return;
 
-    // SHOW _ HIDE MAIN MENU
     if (currentScrollPos > WIN_PREV_POSITION) {
       if (
         isInViewport(containerRef.current) &&
@@ -76,7 +72,6 @@ const FooterNav = () => {
       ) {
         return;
       }
-
       containerRef.current.classList.add("FooterNav--hide");
     } else {
       if (
@@ -108,7 +103,7 @@ const FooterNav = () => {
             isActive ? "text-purple-600" : ""
           }`}
         >
-          {item.name}
+          {t(item.nameKey)}
         </span>
       </Link>
     ) : (
@@ -119,7 +114,9 @@ const FooterNav = () => {
         }`}
       >
         <item.icon iconClassName="w-6 h-6" className={``} />
-        <span className="text-[11px] leading-none mt-1">{item.name}</span>
+        <span className="text-[11px] leading-none mt-1">
+          {t(item.nameKey)}
+        </span>
       </div>
     );
   };
@@ -131,7 +128,6 @@ const FooterNav = () => {
       transition-transform duration-300 ease-in-out"
     >
       <div className="w-full max-w-lg flex justify-around mx-auto text-sm text-center ">
-        {/* MENU */}
         {NAV.map(renderItem)}
       </div>
     </div>

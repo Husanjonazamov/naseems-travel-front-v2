@@ -10,6 +10,9 @@ import { soloTouringData } from '@/data';
 
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+
+
 
 const responsive = {
   desktop: {
@@ -60,6 +63,7 @@ const fadeUp: Variants = {
 };
 
 const PopularTouring = () => {
+  const t = useTranslations("travel")
   return (
     <div className="pt-20 pb-20 text-white">
       {/* Section Heading with motion */}
@@ -69,7 +73,7 @@ const PopularTouring = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <SectionHeading heading="NEW SOLO TOURING HOLIDAYS" />
+        <SectionHeading heading={t("new_solo_touring")} />
       </motion.div>
 
       {/* Desktop Grid */}
@@ -122,7 +126,7 @@ const PopularTouring = () => {
           href="/tour"
           className="bg-blue-900 text-white w-[86%] sm:w-[300px] text-lg sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-bold rounded-xl hover:shadow-lg transition-all hover:bg-blue-950 text-center block"
         >
-        Explore More
+        {t("explore_more")}
       </Link>
       </motion.div>
     </div>

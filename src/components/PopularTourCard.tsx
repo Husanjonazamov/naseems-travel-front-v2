@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   data: {
@@ -22,6 +23,7 @@ const truncateText = (text: string, maxWords: number) => {
 
 
 const PopularTouringCard = ({ data }: Props) => {
+  const t = useTranslations("travel")
   return (
     <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden flex flex-col h-full min-h-[520px]">
       
@@ -60,7 +62,7 @@ const PopularTouringCard = ({ data }: Props) => {
              <Link
                 href={"/listing-stay-detail"}
                 className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[50%] font-bold">
-                  Explore
+                   {t("explore_more")}
               </Link>
           </div>
         </div>

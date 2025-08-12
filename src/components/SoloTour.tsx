@@ -8,6 +8,8 @@ import SectionHeading from './SectionHeading';
 import SolorTouringCard from './SoloTourCard';
 import { soloTouringData } from '@/data';
 
+import { useTranslations } from 'next-intl';
+
 import { motion, Variants } from 'framer-motion';
 
 import Link from 'next/link';
@@ -61,6 +63,8 @@ const fadeUp: Variants = {
 };
 
 const SoloTouring = () => {
+  const t = useTranslations("travel")
+  
   return (
     <div className="pt-20 pb-20 text-white">
       {/* Section Heading with motion */}
@@ -70,7 +74,7 @@ const SoloTouring = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <SectionHeading heading="NEW SOLO TOURING HOLIDAYS" />
+        <SectionHeading heading={t("new_solo_touring")} />
       </motion.div>
 
       {/* Desktop Grid */}
@@ -124,7 +128,7 @@ const SoloTouring = () => {
                 href="/tour"
                 className="bg-blue-900 text-white w-[86%] sm:w-[300px] text-lg sm:text-base px-4 sm:px-6 py-3 sm:py-4 font-bold rounded-xl hover:shadow-lg transition-all hover:bg-blue-950 text-center block"
               >
-              Explore More
+              {t("explore_more")}
             </Link>
       </motion.div>
     </div>

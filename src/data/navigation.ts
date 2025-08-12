@@ -2,6 +2,7 @@ import { MegamenuItem, NavItemType } from "@/shared/Navigation/NavigationItem";
 import ncNanoId from "@/utils/ncNanoId";
 import { Route } from "@/routers/types";
 import __megamenu from "./jsons/__megamenu.json";
+import { useTranslations } from "use-intl";
 
 const megaMenuDemo: MegamenuItem[] = [
   {
@@ -175,101 +176,7 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     href: "/tour",
     name: "Tour",
   },
-  
-  // {
-  //   id: ncNanoId(),
-  //   href: "/listing-stay",
-  //   name: "Listing Page",
-  //   type: "dropdown",
-  //   children: [
-  //     {
-  //       id: ncNanoId(),
-  //       href: "/listing-stay",
-  //       name: "Stay listings",
-  //       type: "dropdown",
-  //       children: [
-  //         { id: ncNanoId(), href: "/listing-stay", name: "Stay page" },
-  //         {
-  //           id: ncNanoId(),
-  //           href: "/listing-stay-map",
-  //           name: "Stay page (map)",
-  //         },
-  //         { id: ncNanoId(), href: "/listing-stay-detail", name: "Stay Detail" },
-  //       ],
-  //     },
 
-  //     //
-  //     {
-  //       id: ncNanoId(),
-  //       href: "/listing-experiences",
-  //       name: "Experiences listings",
-  //       type: "dropdown",
-  //       children: [
-  //         {
-  //           id: ncNanoId(),
-  //           href: "/listing-experiences",
-  //           name: "Experiences page",
-  //         },
-  //         {
-  //           id: ncNanoId(),
-  //           href: "/listing-experiences-map",
-  //           name: "Experiences page (map)",
-  //         },
-  //         {
-  //           id: ncNanoId(),
-  //           href: "/listing-experiences-detail",
-  //           name: "Experiences Detail",
-  //         },
-  //       ],
-  //     },
-
-  //     //
-  //     {
-  //       id: ncNanoId(),
-  //       href: "/listing-car",
-  //       name: "Cars listings",
-  //       type: "dropdown",
-  //       children: [
-  //         { id: ncNanoId(), href: "/listing-car", name: "Cars page" },
-  //         { id: ncNanoId(), href: "/listing-car-map", name: "Cars page (map)" },
-  //         { id: ncNanoId(), href: "/listing-car-detail", name: "Car Detail" },
-  //       ],
-  //     },
-
-  //     //
-  //     {
-  //       id: ncNanoId(),
-  //       href: "/listing-real-estate",
-  //       name: "Real Estate Listings",
-  //       type: "dropdown",
-  //       children: [
-  //         {
-  //           id: ncNanoId(),
-  //           href: "/listing-real-estate",
-  //           name: "Real Estate Listings",
-  //         },
-  //         {
-  //           id: ncNanoId(),
-  //           href: "/listing-real-estate-map",
-  //           name: "Real Estate Maps",
-  //         },
-  //       ],
-  //     },
-  //     //
-  //     {
-  //       id: ncNanoId(),
-  //       href: "/listing-flights",
-  //       name: "Flights listings",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: ncNanoId(),
-  //   href: "/author",
-  //   name: "Templates",
-  //   type: "dropdown",
-  //   children: templatesChildrenMenus,
-  // },
 
   {
     id: ncNanoId(),
@@ -372,3 +279,34 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
     children: otherPageChildMenus,
   },
 ];
+
+
+
+
+export default function useNavigation(): NavItemType[] {
+  const t = useTranslations("travel");
+
+  return [
+    {
+      id: ncNanoId(),
+      href: "/",
+      name: t("home"),
+      isNew: true,
+    },
+    {
+      id: ncNanoId(),
+      href: "/tour",
+      name: t("tour"),
+    },
+    {
+      id: ncNanoId(),
+      href: "/blog",
+      name: t("blog"),
+    },
+    {
+      id: ncNanoId(),
+      href: "/contact",
+      name: t("contact"),
+    },
+  ];
+}

@@ -119,7 +119,7 @@ export interface ExperiencesDataType {
 export interface CarDataType {
   id: string | number;
   author: AuthorType;
-  date: string;
+  date?: string;
   href: Route<string>;
   title: string;
   featuredImage: StaticImageData | string;
