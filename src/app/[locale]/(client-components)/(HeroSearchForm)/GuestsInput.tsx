@@ -1,14 +1,13 @@
 "use client";
 
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, FC } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import NcInputNumber from "@/components/NcInputNumber";
-import { FC } from "react";
 import ClearDataButton from "./ClearDataButton";
 import ButtonSubmit from "./ButtonSubmit";
 import { PathName } from "@/routers/types";
 import { UserPlusIcon } from "@heroicons/react/24/outline";
-import { GuestsObject } from "../type";
+import { useTranslations } from "next-intl";
 
 export interface GuestsInputProps {
   fieldClassName?: string;
@@ -23,28 +22,16 @@ const GuestsInput: FC<GuestsInputProps> = ({
   buttonSubmitHref = "/listing-stay-map",
   hasButtonSubmit = true,
 }) => {
+  const t = useTranslations("travel");
+
   const [guestAdultsInputValue, setGuestAdultsInputValue] = useState(2);
   const [guestChildrenInputValue, setGuestChildrenInputValue] = useState(1);
   const [guestInfantsInputValue, setGuestInfantsInputValue] = useState(1);
 
-  const handleChangeData = (value: number, type: keyof GuestsObject) => {
-    let newValue = {
-      guestAdults: guestAdultsInputValue,
-      guestChildren: guestChildrenInputValue,
-      guestInfants: guestInfantsInputValue,
-    };
-    if (type === "guestAdults") {
-      setGuestAdultsInputValue(value);
-      newValue.guestAdults = value;
-    }
-    if (type === "guestChildren") {
-      setGuestChildrenInputValue(value);
-      newValue.guestChildren = value;
-    }
-    if (type === "guestInfants") {
-      setGuestInfantsInputValue(value);
-      newValue.guestInfants = value;
-    }
+  const handleChangeData = (value: number, type: "guestAdults" | "guestChildren" | "guestInfants") => {
+    if (type === "guestAdults") setGuestAdultsInputValue(value);
+    if (type === "guestChildren") setGuestChildrenInputValue(value);
+    if (type === "guestInfants") setGuestInfantsInputValue(value);
   };
 
   const totalGuests =
@@ -67,10 +54,10 @@ const GuestsInput: FC<GuestsInputProps> = ({
               </div>
               <div className="flex-grow">
                 <span className="block xl:text-lg font-semibold">
-                  {totalGuests || ""} Guests
+                  {totalGuests || ""} {t("guests")}
                 </span>
                 <span className="block mt-1 text-sm text-neutral-400 leading-none font-light">
-                  {totalGuests ? "Guests" : "Add guests"}
+                  {totalGuests ? t("guests") : t("addGuests")}
                 </span>
               </div>
 
@@ -85,7 +72,6 @@ const GuestsInput: FC<GuestsInputProps> = ({
               )}
             </Popover.Button>
 
-            {/* BUTTON SUBMIT OF FORM */}
             {hasButtonSubmit && (
               <div className="pr-2 xl:pr-4">
                 <ButtonSubmit href={buttonSubmitHref} />
@@ -112,16 +98,17 @@ const GuestsInput: FC<GuestsInputProps> = ({
                 onChange={(value) => handleChangeData(value, "guestAdults")}
                 max={10}
                 min={1}
-                label="Adults"
-                desc="Ages 13 or above"
+                label={t("adults")}
+                desc={t("adultsDesc")}
               />
               <NcInputNumber
                 className="w-full mt-6"
                 defaultValue={guestChildrenInputValue}
                 onChange={(value) => handleChangeData(value, "guestChildren")}
                 max={4}
-                label="Children"
-                desc="Ages 2–12"
+                min={0}
+                label={t("children")}
+                desc={t("childrenDesc")}
               />
 
               <NcInputNumber
@@ -129,8 +116,9 @@ const GuestsInput: FC<GuestsInputProps> = ({
                 defaultValue={guestInfantsInputValue}
                 onChange={(value) => handleChangeData(value, "guestInfants")}
                 max={4}
-                label="Infants"
-                desc="Ages 0–2"
+                min={0}
+                label={t("infants")}
+                desc={t("infantsDesc")}
               />
             </Popover.Panel>
           </Transition>

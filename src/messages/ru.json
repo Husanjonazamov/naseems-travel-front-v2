@@ -1,5 +1,12 @@
 {
   "travel": {
+  "addGuests": "Добавить гостей",
+  "adultsDesc": "От 13 лет и старше",
+  "childrenDesc": "От 2 до 12 лет",
+  "infantsDesc": "От 0 до 2 лет",
+     "recent_locations": ["Ташкент", "Самарканд", "Бухара"],
+    "search_results": ["Ташкент", "Фергана", "Андижан"],
+    "recent_searches": "Недавние поиски",
     "menu": "Главная страница",
      "booking_title": "Бронирование поездки",
   "travel_checklist_title": "Список для путешествия",

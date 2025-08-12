@@ -109,8 +109,15 @@
     "people_count_placeholder": "Nechi kishi",
     "message_placeholder": "Xabar...",
     "send": "Yuborish",
-    "cancel": "Bekor qilish"
-
-    }
+    "cancel": "Bekor qilish",
+    
+    "recent_locations": ["Toshkent", "Samarqand", "Buxoro"],
+    "search_results": ["Toshkent", "Farg'ona", "Andijon"],
+    "recent_searches": "Yaqinda qidirilganlar",
+    "addGuests": "Mehmon qo‘shish",
+    "adultsDesc": "13 yoshdan katta",
+    "childrenDesc": "2–12 yoshgacha",
+    "infantsDesc": "0–2 yoshgacha"
+  }
 
 }

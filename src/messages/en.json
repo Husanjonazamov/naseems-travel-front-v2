@@ -1,5 +1,12 @@
 {
   "travel": {
+    "addGuests": "Add guests",
+    "adultsDesc": "Ages 13 or above",
+    "childrenDesc": "Ages 2–12",
+    "infantsDesc": "Ages 0–2",
+     "recent_locations": ["Tashkent", "Samarkand", "Bukhara"],
+    "search_results": ["Tashkent", "Fergana", "Andijan"],
+    "recent_searches": "Recent Searches",
     "menu": "Menu",
     
     "phone": "+998 90 123 45 67",

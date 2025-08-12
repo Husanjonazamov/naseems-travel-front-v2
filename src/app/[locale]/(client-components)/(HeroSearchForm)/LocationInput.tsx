@@ -64,7 +64,9 @@ const LocationInput: FC<LocationInputProps> = ({
   };
 
   const renderRecentSearches = () => {
-    const recentLocations = t.raw("recent_locations") as string[];
+    const recentLocationsRaw = t.raw("recent_locations");
+    const recentLocations = Array.isArray(recentLocationsRaw) ? recentLocationsRaw : [];
+
     return (
       <>
         <h3 className="block mt-2 sm:mt-0 px-4 sm:px-8 font-semibold text-base sm:text-lg text-neutral-800 dark:text-neutral-100">
@@ -91,7 +93,9 @@ const LocationInput: FC<LocationInputProps> = ({
   };
 
   const renderSearchValue = () => {
-    const searchResults = t.raw("search_results") as string[];
+    const searchResultsRaw = t.raw("search_results");
+    const searchResults = Array.isArray(searchResultsRaw) ? searchResultsRaw : [];
+
     return (
       <>
         {searchResults.map((item) => (
