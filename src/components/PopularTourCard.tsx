@@ -61,7 +61,7 @@ const PopularTouringCard = ({ data }: Props) => {
           <div className="flex justify-end">
              <Link
                 href={"/listing-stay-detail"}
-                className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[50%] font-bold">
+                className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[52%] font-bold">
                    {t("explore_more")}
               </Link>
           </div>

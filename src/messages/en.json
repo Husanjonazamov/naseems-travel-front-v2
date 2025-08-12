@@ -1,5 +1,17 @@
 {
   "travel": {
+    "gettingStarted": "Getting started",
+    "designFeatures": "Design features",
+    "designSystems": "Design systems",
+
+    "bestPractices": "Best practices",
+    "learnDesign": "Learn design",
+
+    "discussionForums": "Discussion Forums",
+    "codeOfConduct": "Code of Conduct",
+    "communityResources": "Community Resources",
+    "concurrentMode": "Concurrent Mode",
+
     "addGuests": "Add guests",
     "adultsDesc": "Ages 13 or above",
     "childrenDesc": "Ages 2–12",

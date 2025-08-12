@@ -5,6 +5,7 @@ import SocialsList1 from "@/shared/SocialsList1";
 import { CustomLink } from "@/data/types";
 import React from "react";
 import FooterNav from "./FooterNav";
+import { useTranslations } from "next-intl";
 
 export interface WidgetFooterMenu {
   id: string;
@@ -12,54 +13,55 @@ export interface WidgetFooterMenu {
   menus: CustomLink[];
 }
 
-const widgetMenus: WidgetFooterMenu[] = [
-  {
-    id: "5",
-    title: "Getting started",
-    menus: [
-      { href: "#", label: "Installation" },
-      { href: "#", label: "Release Notes" },
-      { href: "#", label: "Upgrade Guide" },
-      { href: "#", label: "Browser Support" },
-      { href: "#", label: "Editor Support" },
-    ],
-  },
-  {
-    id: "1",
-    title: "Explore",
-    menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Security" },
-    ],
-  },
-  {
-    id: "2",
-    title: "Resources",
-    menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "Releases" },
-    ],
-  },
-  {
-    id: "4",
-    title: "Community",
-    menus: [
-      { href: "#", label: "Discussion Forums" },
-      { href: "#", label: "Code of Conduct" },
-      { href: "#", label: "Community Resources" },
-      { href: "#", label: "Contributing" },
-      { href: "#", label: "Concurrent Mode" },
-    ],
-  },
-];
-
 const Footer: React.FC = () => {
+  const t = useTranslations("travel");
+
+  const widgetMenus: WidgetFooterMenu[] = [
+    {
+      id: "5",
+      title: t("gettingStarted"),
+      menus: [
+        { href: "/", label: t("home") },
+        { href: "/tour", label: t("tour") },
+        { href: "/blog", label: t("blog") },
+        { href: "/contact", label: t("contact") },
+      ],
+    },
+    {
+      id: "1",
+      title: t("explore"),
+      menus: [
+        { href: "#", label: t("designFeatures") },
+        { href: "#", label: t("prototyping") },
+        { href: "#", label: t("designSystems") },
+        { href: "#", label: t("pricing") },
+        { href: "#", label: t("security") },
+      ],
+    },
+    {
+      id: "2",
+      title: t("resources"),
+      menus: [
+        { href: "#", label: t("bestPractices") },
+        { href: "#", label: t("support") },
+        { href: "#", label: t("developers") },
+        { href: "#", label: t("learnDesign") },
+        { href: "#", label: t("releases") },
+      ],
+    },
+    {
+      id: "4",
+      title: t("community"),
+      menus: [
+        { href: "#", label: t("discussionForums") },
+        { href: "#", label: t("codeOfConduct") },
+        { href: "#", label: t("communityResources") },
+        { href: "#", label: t("contributing") },
+        { href: "#", label: t("concurrentMode") },
+      ],
+    },
+  ];
+
   const renderWidgetMenuItem = (menu: WidgetFooterMenu, index: number) => {
     return (
       <div key={index} className="text-sm">
@@ -70,7 +72,6 @@ const Footer: React.FC = () => {
           {menu.menus.map((item, index) => (
             <li key={index}>
               <a
-                key={index}
                 className="text-neutral-6000 dark:text-neutral-300 hover:text-black dark:hover:text-white"
                 href={item.href}
               >
@@ -92,9 +93,6 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
             <div className="col-span-2 md:col-span-1">
               <Logo />
-            </div>
-            <div className="col-span-2 flex items-center md:col-span-3">
-              <SocialsList1 className="flex items-center space-x-3 lg:space-x-0 lg:flex-col lg:space-y-2.5 lg:items-start" />
             </div>
           </div>
           {widgetMenus.map(renderWidgetMenuItem)}

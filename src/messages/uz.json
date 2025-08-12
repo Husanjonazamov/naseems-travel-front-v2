@@ -1,5 +1,18 @@
 {
   "travel": {
+    "gettingStarted": "Boshlash",
+
+    "designFeatures": "Dizayn xususiyatlari",
+    "designSystems": "Dizayn tizimlari",
+
+    "bestPractices": "Eng yaxshi amaliyotlar",
+    "learnDesign": "Dizaynni o‘rganish",
+
+    "discussionForums": "Munozara forumlari",
+    "codeOfConduct": "Xulq kodeksi",
+    "communityResources": "Jamiyat resurslari",
+    "concurrentMode": "Bir vaqtning o‘zida rejimi",
+
     "menu": "Bosh sahifa",
     "lang": "Til",
     "phone": "+998 90 123 45 67",

@@ -1,5 +1,15 @@
 {
   "travel": {
+    "gettingStarted": "Начало работы",
+    "designFeatures": "Особенности дизайна",
+    "designSystems": "Системы дизайна",
+    "bestPractices": "Лучшие практики",
+    "learnDesign": "Изучить дизайн",
+    "discussionForums": "Форумы обсуждений",
+    "codeOfConduct": "Кодекс поведения",
+    "communityResources": "Ресурсы сообщества",
+    "concurrentMode": "Параллельный режим",
+
   "addGuests": "Добавить гостей",
   "adultsDesc": "От 13 лет и старше",
   "childrenDesc": "От 2 до 12 лет",
