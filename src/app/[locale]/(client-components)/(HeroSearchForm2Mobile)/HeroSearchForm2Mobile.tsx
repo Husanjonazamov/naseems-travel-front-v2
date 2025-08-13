@@ -69,8 +69,6 @@ const HeroSearchForm2Mobile = () => {
   return (
     <div className="HeroSearchForm2Mobile">
       {renderButtonOpenModal()}
-
-     
     </div>
   );
 };

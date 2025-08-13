@@ -100,8 +100,8 @@ const Touring = () => {
           responsive={responsive}
           infinite
           autoPlay={false}
-          showDots={true}
-          renderDotsOutside={true}
+          showDots={false}
+          renderDotsOutside={false}
           customDot={null}
         >
           {TouringData.map((data, index) => (
