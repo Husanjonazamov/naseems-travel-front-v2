@@ -37,7 +37,7 @@ const HeroSearchForm2Mobile = () => {
         <MagnifyingGlassIcon className="flex-shrink-0 w-5 h-5" />
 
         <div className="ml-3 flex-1 text-left overflow-hidden">
-          <span className="block font-medium text-sm">Naseems <span className="text-purple-500 font-bold">Travel</span></span>
+          <span className="block font-bold text-lg">Naseems <span className="text-blue-900 font-bold">Travel</span></span>
           
           <span className="block mt-0.5 text-xs font-light text-neutral-500 dark:text-neutral-400 ">
             <span className="line-clamp-1">

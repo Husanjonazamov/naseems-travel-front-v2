@@ -101,8 +101,8 @@ const SelectTouring = () => {
           responsive={responsive}
           infinite
           autoPlay={false}
-          showDots={true}
-          renderDotsOutside={true}
+          showDots={false}
+          renderDotsOutside={false}
         >
           {soloTouringData.map((data, index) => (
             <div key={index} className="px-2 h-full">

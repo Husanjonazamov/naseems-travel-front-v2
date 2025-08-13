@@ -1,14 +1,18 @@
 import React from "react";
+import Image from "next/image";
 
-const LogoSvg = () => {
+const Logo = () => {
   return (
-    <div className="flex items-center space-x-2 select-none">
-      <div className="w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse" />
-      <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-zinc-100">
-        Naseems <span className="text-indigo-600 dark:text-purple-400">Travel</span>
-      </h1>
-    </div>
+    <a href="/" className="inline-block">
+      <Image
+        src="/images/logo3.png"  
+        alt="Logo"
+        width={200}             // o'zingizga mos kattalik
+        height={80}
+        priority               // sahifa tez yuklanishi uchun
+      />
+    </a>
   );
 };
 
-export default LogoSvg;
+export default Logo;

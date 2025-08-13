@@ -104,8 +104,8 @@ const SoloTouring = () => {
           responsive={responsive}
           infinite
           autoPlay={false}
-          showDots={true}
-          renderDotsOutside={true}
+          showDots={false}
+          renderDotsOutside={false}
           customDot={null}
         >
           {soloTouringData.map((data, index) => (

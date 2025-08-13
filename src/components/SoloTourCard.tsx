@@ -58,14 +58,15 @@ const SolorTouringCard = ({ data }: Props) => {
             {data.days} days from
           </p>
           <p className="text-2xl font-bold text-gray-900 mb-3">£{data.price}</p>
-          <div className="flex justify-end">
-            <Link 
-            href={"/listing-stay-detail"}
-            className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm w-[52%] font-bold">
+          <div className="flex justify-end mt-6">
+            <Link
+              href={"/listing-stay-detail"}
+              className="bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg text-sm font-bold block w-full sm:w-auto text-center"
+            >
               {t("explore_more")}
-              
             </Link>
           </div>
+
         </div>
       </div>
     </div>
